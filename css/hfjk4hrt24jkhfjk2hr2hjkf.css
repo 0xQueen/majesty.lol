@@ -1,0 +1,43 @@
+/*
+
+CSS FOR 404 PAGE!
+
+*/
+
+.container {
+    max-width: 800px;
+    text-align: center;
+}
+
+.section {
+    padding: 40px 20px;
+    background-color: #2d3748;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h1 {
+    color: #f06292; /* Pink accent color */
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 4.5em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+h3 {
+    color: #a0aec0;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #a0aec0;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #f06292; /* Pink accent color */
+}

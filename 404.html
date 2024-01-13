@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>majesty.lol | 404</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/hfjk4hrt24jkhfjk2hr2hjkf.css">
+</head>
+
+<body class="bg-gray-900 text-gray-300 flex items-center justify-center h-screen m-0 overflow-hidden">
+
+    <div class="container">
+        <section class="section">
+            <h1>404</h1>
+            <h3>Oh uh.. You arrived on a page that doesn't exist [yet]</h3>
+        </section>
+    </div>
+
+</body>
+
+<script>
+    var isDevToolsOpened = false;
+
+    // Check if devtools are open
+    window.addEventListener('devtoolschange', function (e) {
+        isDevToolsOpened = e.detail.isOpen;
+
+        if (isDevToolsOpened) {
+            // Dev tools are opened, you can perform actions or disable functionality
+            // For now, let's just set a flag to prevent the script's normal behavior
+            reloadOnResize = false;
+        } else {
+            // Dev tools are closed, you can re-enable functionality if needed
+            reloadOnResize = true;
+        }
+    });
+
+    // Set a flag to enable/disable the reload on resize
+    var reloadOnResize = true;
+
+    window.addEventListener('resize', function () {
+        if (reloadOnResize && window.innerWidth > 800 && !isDevToolsOpened) {
+            location.reload();
+        }
+    });
+</script>
+
+<script src="./javascript/no-console.js"></script>
+
+
+</html>

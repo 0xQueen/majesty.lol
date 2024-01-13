@@ -1,0 +1,86 @@
+body {
+    background-color: #1a202c;
+    color: #cbd5e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling when modal is open */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.custom-modal {
+    display: none;
+    z-index: 1000; /* Ensure the modal stays on top */
+}
+
+.bottom-nav {
+    z-index: 1000;
+    display: none;
+}
+
+.section {
+    background-color: #2d3748;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.section h1 {
+    color: #f06292; /* Pink accent color */
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.section h3 {
+    color: #a0aec0;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: #a0aec0;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #f06292; /* Pink accent color */
+}
+
+.bottom-nav a {
+    color: #f06292; /* Pink accent color */
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.bottom-nav a:hover {
+    color: #ce4e78; /* Darker pink on hover */
+}
+
+.modal-open .bottom-nav {
+    display: flex;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.section {
+    max-width: 720px;
+    word-wrap: break-word;
+}
