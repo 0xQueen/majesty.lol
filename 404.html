@@ -20,34 +20,6 @@
 
 </body>
 
-<script>
-    var isDevToolsOpened = false;
-
-    // Check if devtools are open
-    window.addEventListener('devtoolschange', function (e) {
-        isDevToolsOpened = e.detail.isOpen;
-
-        if (isDevToolsOpened) {
-            // Dev tools are opened, you can perform actions or disable functionality
-            // For now, let's just set a flag to prevent the script's normal behavior
-            reloadOnResize = false;
-        } else {
-            // Dev tools are closed, you can re-enable functionality if needed
-            reloadOnResize = true;
-        }
-    });
-
-    // Set a flag to enable/disable the reload on resize
-    var reloadOnResize = true;
-
-    window.addEventListener('resize', function () {
-        if (reloadOnResize && window.innerWidth > 800 && !isDevToolsOpened) {
-            location.reload();
-        }
-    });
-</script>
-
 <script src="./javascript/no-console.js"></script>
-
 
 </html>
