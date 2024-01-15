@@ -1,0 +1,53 @@
+.toggle-section {
+    cursor: pointer;
+}
+
+.toggle-section span {
+    color: #cbd5e0;
+}
+
+.toggle-section i {
+    color: rgb(206, 157, 199); /* Red color for arrow */
+    transition: transform 0.3s ease;
+}
+
+.toggle-section.collapsed i {
+    transform: rotate(180deg);
+}
+
+.info {
+    background-color: #1a202c;
+    color: #cbd5e0;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.textarea {
+    min-height: 100px;
+}
+
+#howToText {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background-color: #1a202c;
+    color: #cbd5e0;
+    padding: 0 10px; 
+    border-radius: 8px;
+}
+
+#howToToggle:focus {
+    outline: 2px solid white; 
+    box-sizing: border-box; 
+}
+
+#howToToggle:focus #arrow {
+    outline: none;
+}
+
+h1 {
+    text-align: center;
+}
