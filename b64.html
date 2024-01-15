@@ -30,25 +30,25 @@
 
             <div class="flex items-center cursor-pointer" id="howToToggle">
                 <span class="text-gray-300">How does this work?</span>
-                <div class="ml-2 text-pink-500" id="arrow">∨</div>
+                <i class="ml-2 fas fa-angle-down"></i>
             </div>
 
             <div id="howToText" class="mt-4 info">
                 <p class="mb-2 info">
                     Base64 is an encoder; with this tool, you can encode and decode text.<br><br>
 
-                    In the 'Input Text' section, you can input encoded text and click on 'Decode.'<br>
+                    In the 'Input Text' section, you can input encoded text and click on 'Decode.'<br><br>
                     In the 'Input Text' section, you can enter text and click 'Encode.'</p>
             </div>
 
             <div class="mb-6">
-                <label for="inputText" class="text-gray-500 text-lg mb-2 block">Input Text:</label>
-                <textarea id="inputText" class="textarea bg-gray-800 rounded-md w-full p-2" placeholder="Enter text for encoding/decoding"></textarea>
+                <label for="inputText" class="text-gray-500 text-lg mb-2 block">Input:</label>
+                <textarea id="inputText" class="textarea bg-gray-800 rounded-md w-full p-2" placeholder="Enter the text to encode or decode."></textarea>
             </div>
 
             <div class="mb-6">
-                <label for="outputText" class="text-gray-500 text-lg mb-2 block">Output Text:</label>
-                <textarea id="outputText" class="textarea bg-gray-800 rounded-md w-full p-2" placeholder="Result will appear here" readonly></textarea>
+                <label for="outputText" class="text-gray-500 text-lg mb-2 block">Output:</label>
+                <textarea id="outputText" class="textarea bg-gray-800 rounded-md w-full p-2" placeholder="Output will appear here." readonly></textarea>
             </div>
 
             <div class="flex justify-between mb-4">
