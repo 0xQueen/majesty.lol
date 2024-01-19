@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const copyBtn = document.getElementById("copyBtn");
     const copySuccess = document.getElementById("copySuccess");
 
-    // Function to encode text using Base64
+    // Function to encode text
     function encodeText() {
         const input = inputText.value;
         const encodedText = btoa(input);
         outputText.value = encodedText;
     }
 
-    // Function to decode text from Base64
+    // Function to decode text
     function decodeText() {
         const input = inputText.value;
         try {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to copy text to clipboard
+    // Function to copy to clipboard
     function copyToClipboard() {
         outputText.select();
         document.execCommand("copy");
@@ -34,13 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1500);
     }
 
-    // Event listeners
     encodeBtn.addEventListener("click", encodeText);
     decodeBtn.addEventListener("click", decodeText);
     copyBtn.addEventListener("click", copyToClipboard);
 });
 
-// How-To 
 
 var howToToggle = document.getElementById('howToToggle');
 var howToText = document.getElementById('howToText');
@@ -51,4 +49,19 @@ howToToggle.addEventListener('click', function () {
     } else {
         howToText.style.maxHeight = '0';
     }
+});
+
+document.getElementById('copyOutputBtn').addEventListener('click', function () {
+    const outputText = document.getElementById('outputText');
+    outputText.select();
+    document.execCommand('copy');
+    document.getSelection().removeAllRanges();
+
+    const copyOutputSuccess = document.getElementById('copyOutputSuccess');
+    copyOutputSuccess.textContent = 'Copied!';
+    copyOutputSuccess.classList.remove('hidden');
+    setTimeout(() => {
+        copyOutputSuccess.textContent = '';
+        copyOutputSuccess.classList.add('hidden');
+    }, 1500);
 });
