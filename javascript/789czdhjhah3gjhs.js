@@ -1,3 +1,5 @@
+// Add this inside your script tag or in your external JavaScript file
+
 document.addEventListener("DOMContentLoaded", function () {
     const inputText = document.getElementById("inputText");
     const outputText = document.getElementById("outputText");
@@ -6,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const copyBtn = document.getElementById("copyBtn");
     const copySuccess = document.getElementById("copySuccess");
 
-    // Function to encode
+    // Function to encode text using Base64
     function encodeText() {
         const input = inputText.value;
         const encodedText = btoa(input);
         outputText.value = encodedText;
     }
 
-    // Function to decode
+    // Function to decode text from Base64
     function decodeText() {
         const input = inputText.value;
         try {
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Function to copy to clipboard [Fix for mobile devices]
+    // Function to copy text to clipboard
     function copyToClipboard() {
         outputText.select();
         document.execCommand("copy");
@@ -34,7 +36,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1500);
     }
 
+    // Event listeners
     encodeBtn.addEventListener("click", encodeText);
     decodeBtn.addEventListener("click", decodeText);
     copyBtn.addEventListener("click", copyToClipboard);
+});
+
+// How-To 
+
+var howToToggle = document.getElementById('howToToggle');
+var howToText = document.getElementById('howToText');
+
+howToToggle.addEventListener('click', function () {
+    if (howToText.style.maxHeight === '0px') {
+        howToText.style.maxHeight = howToText.scrollHeight + 'px';
+    } else {
+        howToText.style.maxHeight = '0';
+    }
 });
