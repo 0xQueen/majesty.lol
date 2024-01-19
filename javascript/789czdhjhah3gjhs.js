@@ -1,5 +1,3 @@
-// Add this inside your script tag or in your external JavaScript file
-
 document.addEventListener("DOMContentLoaded", function () {
     const inputText = document.getElementById("inputText");
     const outputText = document.getElementById("outputText");
