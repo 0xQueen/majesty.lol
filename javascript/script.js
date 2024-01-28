@@ -1,14 +1,15 @@
-var languageModal = document.getElementById('languageModal');
+document.addEventListener("DOMContentLoaded", function () {
+    // Your variables from the first part of the script
+    var languageModal = document.getElementById('languageModal');
 
-if (languageModal) {
-    languageModal.style.display = 'flex';
+    if (languageModal) {
+        languageModal.style.display = 'flex';
 
-    function toggleNavBarVisibility(show) {
-        var navBar = document.querySelector('.bottom-nav');
-        navBar.style.display = show ? 'flex' : 'none';
-    }
+        function toggleNavBarVisibility(show) {
+            var navBar = document.querySelector('.bottom-nav');
+            navBar.style.display = show ? 'flex' : 'none';
+        }
 
-    setTimeout(function () {
         document.querySelector('.loading-screen').style.display = 'none';
         document.getElementById('content').classList.remove('hidden');
 
@@ -52,6 +53,68 @@ if (languageModal) {
             handleLanguageSelection('russian');
             toggleNavBarVisibility(true);
         });
+    }
 
-    }, 0);
-}
+    // Your variables and functions from the second part of the script
+    const inputText = document.getElementById("inputText");
+    const outputText = document.getElementById("outputText");
+    const encodeBtn = document.getElementById("encodeBtn");
+    const decodeBtn = document.getElementById("decodeBtn");
+    const copyBtn = document.getElementById("copyBtn");
+    const copySuccess = document.getElementById("copySuccess");
+    const howToToggle = document.getElementById('howToToggle');
+    const howToText = document.getElementById('howToText');
+    const copyOutputBtn = document.getElementById('copyOutputBtn');
+    const copyOutputSuccess = document.getElementById('copyOutputSuccess');
+
+    // Function to encode text
+    function encodeText() {
+        const input = inputText.value;
+        const encodedText = btoa(input);
+        outputText.value = encodedText;
+    }
+
+    // Function to decode text
+    function decodeText() {
+        const input = inputText.value;
+        try {
+            const decodedText = atob(input);
+            outputText.value = decodedText;
+        } catch (error) {
+            outputText.value = "Invalid Base64 input!";
+        }
+    }
+
+    // Function to copy to clipboard
+    function copyToClipboard() {
+        outputText.select();
+        document.execCommand("copy");
+        copySuccess.classList.remove("hidden");
+        setTimeout(() => {
+            copySuccess.classList.add("hidden");
+        }, 1500);
+    }
+
+    encodeBtn.addEventListener("click", encodeText);
+    decodeBtn.addEventListener("click", decodeText);
+    copyBtn.addEventListener("click", copyToClipboard);
+
+    // Function to toggle howToText
+    howToToggle.addEventListener('click', function () {
+        howToText.style.maxHeight = (howToText.style.maxHeight === '0px') ? howToText.scrollHeight + 'px' : '0';
+    });
+
+    // Function to copy output text to clipboard
+    copyOutputBtn.addEventListener('click', function () {
+        outputText.select();
+        document.execCommand('copy');
+        document.getSelection().removeAllRanges();
+
+        copyOutputSuccess.textContent = 'Copied!';
+        copyOutputSuccess.classList.remove('hidden');
+        setTimeout(() => {
+            copyOutputSuccess.textContent = '';
+            copyOutputSuccess.classList.add('hidden');
+        }, 1500);
+    });
+});
